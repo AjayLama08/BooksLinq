@@ -101,10 +101,12 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 //var tolkienFirstBook = books.Where(b => b.Author == "J.R.R. Tolkien").OrderBy(b => b.PublishedYear).FirstOrDefault();
 //Console.WriteLine(tolkienFirstBook);
 
-Console.WriteLine("\nBook Count for each Genre");
-var genreCount = books.GroupBy(b => b.Genre).OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
+//Console.WriteLine("\nBook Count for each Genre");
+//var genreCount = books.GroupBy(b => b.Genre);
+    
+//var fred = genreCount.OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
 
-foreach (var gc in genreCount)
-{
-    Console.WriteLine($"{gc.Genre}:{gc.Count}");
-}
+//foreach (var gc in fred)
+//{
+//    Console.WriteLine($"{gc.Genre}:{gc.Count}");
+//}
