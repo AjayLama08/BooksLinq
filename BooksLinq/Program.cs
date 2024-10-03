@@ -102,11 +102,8 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 //Console.WriteLine(tolkienFirstBook);
 
 //Console.WriteLine("\nBook Count for each Genre");
-//var genreCount = books.GroupBy(b => b.Genre);
-
-//var fred = genreCount.OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
-
-//foreach (var gc in fred)
+//var genreCount = books.GroupBy(b => b.Genre).OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
+//foreach (var gc in genreCount)
 //{
 //    Console.WriteLine($"{gc.Genre}:{gc.Count}");
 //}
@@ -128,17 +125,14 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 //DisplayBookList(classicsOrMoreThan500Pages);
 
 Console.WriteLine("\nAverage page count of books in each genre");
-
-var avgPageCount = books.GroupBy(b => b.Genre).Select(g => new
+var avgPageCountEachGenre = books.GroupBy(b => b.Genre).Select(g => new
 {
     Genre = g.Key,
     Average = g.Average(b => b.PageCount)
-}
-);
+}).ToList();
 
-foreach (var gc in pageCount)
+foreach (var pc in avgPageCountEachGenre)
 {
-    Console.WriteLine($"{gc.Genre}: {gc.Average}")
+    Console.WriteLine($"{pc.Genre}: {pc.Average}");
 }
 
-DisplayBookList(avgPageCount);
