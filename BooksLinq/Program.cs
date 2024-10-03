@@ -127,5 +127,18 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 //var classicsOrMoreThan500Pages = books.Where(b => b.IsClassic == true || b.PageCount > 500).ToList();
 //DisplayBookList(classicsOrMoreThan500Pages);
 
-//Console.WriteLine("\nAverage page count of books in each genre");
-//var genreList = books.GroupBy(b => b.Genre);
+Console.WriteLine("\nAverage page count of books in each genre");
+
+var avgPageCount = books.GroupBy(b => b.Genre).Select(g => new
+{
+    Genre = g.Key,
+    Average = g.Average(b => b.PageCount)
+}
+);
+
+foreach (var gc in pageCount)
+{
+    Console.WriteLine($"{gc.Genre}: {gc.Average}")
+}
+
+DisplayBookList(avgPageCount);
