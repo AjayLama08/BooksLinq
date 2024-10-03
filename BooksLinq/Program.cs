@@ -10,6 +10,7 @@ static void DisplayBookList(List<Book> bookList)
     }
 }
 
+//Ajay is handsome
 Console.WriteLine("Book List LINQ\n");
 
 var books = new List<Book>
