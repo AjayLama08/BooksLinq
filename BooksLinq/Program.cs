@@ -55,6 +55,39 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 }
 );
 
-DisplayBookList(books);
+//DisplayBookList(books);
 
+//Console.WriteLine("\nTolkien Books");
+//var tolkienBooks = books.Where(b => b.Author == "J.R.R. Tolkien").ToList();
+//DisplayBookList(tolkienBooks);
 
+//Console.WriteLine("\nTolkien Or Coelho Books");
+//var tolkienOrCoelhoBooks = books.Where(b => b.Author == "J.R.R. Tolkien" || b.Author == "Paulo Coelho").ToList();
+//DisplayBookList(tolkienOrCoelhoBooks);
+
+//Console.WriteLine("\nBooks with IS in the title");
+//var isBooks = books.Where(b => b.Title.Contains("is", StringComparison.CurrentCultureIgnoreCase)).ToList();
+//DisplayBookList(isBooks);
+
+//Console.WriteLine("\nBooks with a page count between 450 and 1000 inclusive");
+//var mediumSizeBooks = books.Where(b => b.PageCount >= 450 && b.PageCount <= 1000).ToList();
+//DisplayBookList(mediumSizeBooks);
+
+//Console.WriteLine("\nBooks in the Autobiography and Romance Genre");
+//var genreFilterList = new List<string> { "Autobiography", "Romance" };
+//var genreFilteredList = books.Where(b => genreFilterList.Contains(b.Genre)).ToList();
+//DisplayBookList(genreFilteredList);
+
+//Console.WriteLine("\nBooks sorted by Genre");
+//var booksSortedByGenre = books.OrderBy(b => b.Genre).ToList();
+//DisplayBookList(booksSortedByGenre);
+
+//Console.WriteLine("\nBooks sorted by Genre and Title");
+//var booksSortedByGenreAndTitle = books.OrderBy(b => b.Genre).ThenBy(b => b.Title).ToList();
+//DisplayBookList(booksSortedByGenreAndTitle);
+
+//Console.WriteLine("\nBooks sorted by Year Published(latest first) and Title");
+//var booksSortedByYearAndTitle = books.OrderByDescending(b => b.PublishedYear).ThenBy(b => b.Title).ToList();
+//DisplayBookList(booksSortedByYearAndTitle);
+
+//Console.WriteLine("nOldest and newest book - Year Published");
