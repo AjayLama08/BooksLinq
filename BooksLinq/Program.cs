@@ -90,4 +90,21 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 //var booksSortedByYearAndTitle = books.OrderByDescending(b => b.PublishedYear).ThenBy(b => b.Title).ToList();
 //DisplayBookList(booksSortedByYearAndTitle);
 
-//Console.WriteLine("nOldest and newest book - Year Published");
+//Console.WriteLine("\nOldest and newest book - Year Published");
+//var oldestBookYear = books.Select(b => b.PublishedYear).Min();
+//Console.WriteLine($"Oldest Year Published: {oldestBookYear}");
+
+//var newestBookYear = books.Select(b => b.PublishedYear).Max();
+//Console.WriteLine($"Most recent Year Published: {newestBookYear}");
+
+//Console.WriteLine("\nJ.R.R. Tolkien first book");
+//var tolkienFirstBook = books.Where(b => b.Author == "J.R.R. Tolkien").OrderBy(b => b.PublishedYear).FirstOrDefault();
+//Console.WriteLine(tolkienFirstBook);
+
+Console.WriteLine("\nBook Count for each Genre");
+var genreCount = books.GroupBy(b => b.Genre).OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
+
+foreach (var gc in genreCount)
+{
+    Console.WriteLine($"{gc.Genre}:{gc.Count}");
+}
