@@ -103,10 +103,29 @@ new Book(18, "The Body Keeps the Score", "Bessel van der Kolk", 464,
 
 //Console.WriteLine("\nBook Count for each Genre");
 //var genreCount = books.GroupBy(b => b.Genre);
-    
+
 //var fred = genreCount.OrderBy(g => g.Key).Select(g => new {Genre = g.Key, Count = g.Count() }).ToList();
 
 //foreach (var gc in fred)
 //{
 //    Console.WriteLine($"{gc.Genre}:{gc.Count}");
 //}
+
+//Console.WriteLine("\nClassic Books with more than 300 pages");
+//var classicBooksWithMoreThan300Pages = books.Where(b => b.IsClassic == true && b.PageCount > 300).ToList();
+//DisplayBookList(classicBooksWithMoreThan300Pages);
+
+//Console.WriteLine("\nBooks that are not classics and published after 1950");
+//var booksThatAreNotClassicsAfter1950 = books.Where(b => b.IsClassic == false && b.PublishedYear > 1950).ToList();
+//DisplayBookList(booksThatAreNotClassicsAfter1950);
+
+//Console.WriteLine("\nBooks by George Allen & Unwin ordered by Page Count");
+//var booksByGeorgeAndAllen = books.Where(b => b.Publisher == "George Allen & Unwin").OrderBy(b => b.PageCount).ToList();
+//DisplayBookList(booksByGeorgeAndAllen);
+
+//Console.WriteLine("\nBooks that are either classic or have more than 500 pages");
+//var classicsOrMoreThan500Pages = books.Where(b => b.IsClassic == true || b.PageCount > 500).ToList();
+//DisplayBookList(classicsOrMoreThan500Pages);
+
+//Console.WriteLine("\nAverage page count of books in each genre");
+//var genreList = books.GroupBy(b => b.Genre);
